@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TccApp.Main">
+	<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="6, 20, 6, 6"
+	                Android="6, 6, 6, 6"
+	                WinPhone="6, 6, 6, 6" />
+  	</ContentPage.Padding>
 	<ContentPage.Content>
+
+		<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+			<Label Text="Seja bem-vindo! Favor selecionar a parte da aplicação que deseja testar." />
+
+			<Button x:Name="btnMatrixesMultiplication" Text="Multiplicação de matrizes" />
+			<Button x:Name="btnIO" Text="Teste de I/O" />
+			<Button x:Name="btnInterface" Text="Teste de interface" />
+
+		</StackLayout>
+
+
 	</ContentPage.Content>
 </ContentPage>

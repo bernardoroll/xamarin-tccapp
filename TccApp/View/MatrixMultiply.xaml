@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TccApp.MatrixMultiply">
+<ContentPage.Padding>
+	    <OnPlatform x:TypeArguments="Thickness"
+	                iOS="6, 20, 6, 6"
+	                Android="6, 6, 6, 6"
+	                WinPhone="6, 6, 6, 6" />
+  	</ContentPage.Padding>
 	<ContentPage.Content>
 	</ContentPage.Content>
 </ContentPage>

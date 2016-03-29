@@ -11,6 +11,10 @@ namespace TccApp
 		{
 			InitializeComponent ();
 		}
+
+		private void InitialLoad() {
+			
+		}
 	}
 }
 
