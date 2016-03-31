@@ -18,6 +18,18 @@ namespace TccApp.iOS
 
 			return base.FinishedLaunching (app, options);
 		}
+
+		public override void WillEnterForeground (UIApplication uiApplication)
+		{
+			base.WillEnterForeground (uiApplication);
+		}
+
+		public override void OnActivated (UIApplication uiApplication)
+		{
+			base.OnActivated (uiApplication);
+		}
+
 	}
+		
 }
 

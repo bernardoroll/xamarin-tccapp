@@ -7,5 +7,20 @@
 	                WinPhone="6, 6, 6, 6" />
   	</ContentPage.Padding>
 	<ContentPage.Content>
+
+		<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+
+			<Label Text="Digite o tamanho da matriz quadrada:" />
+			<Entry x:Name="entMatrixSize" />
+			<Button x:Name="btnCalculate" Text="Calcular" />
+
+			<Label x:Name="lblAverageTime" />
+			<Label x:Name="lblShortestTime" />
+			<Label x:Name="lblLargestTime" />
+			<Label x:Name="lblTotalTime" />
+
+
+		</StackLayout>
+
 	</ContentPage.Content>
 </ContentPage>

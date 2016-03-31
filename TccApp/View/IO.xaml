@@ -6,6 +6,17 @@
 	                Android="6, 6, 6, 6"
 	                WinPhone="6, 6, 6, 6" />
   	</ContentPage.Padding>
-	<ContentPage.Content>
+  	<ContentPage.Content>
+
+		<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+
+			<Label Text="Escolha o tipo de operação:" />
+
+
+
+			<Label Text="Escolha o tamanho do arquivo:" />
+
+		</StackLayout>
+
 	</ContentPage.Content>
 </ContentPage>

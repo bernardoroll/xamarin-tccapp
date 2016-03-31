@@ -6,6 +6,9 @@ namespace TccApp
 {
 	public class App : Application
 	{
+
+		private const string TAG = "App";
+
 		public App ()
 		{
 			// The root page of your application
@@ -26,16 +29,19 @@ namespace TccApp
 		protected override void OnStart ()
 		{
 			// Handle when your app starts
+			System.Diagnostics.Debug.WriteLine(TAG + "OnStart() called.");
 		}
 
 		protected override void OnSleep ()
 		{
 			// Handle when your app sleeps
+			System.Diagnostics.Debug.WriteLine(TAG + "OnSleep() called.");
 		}
 
 		protected override void OnResume ()
 		{
 			// Handle when your app resumes
+			System.Diagnostics.Debug.WriteLine(TAG + "OnResume() called.");
 		}
 	}
 }

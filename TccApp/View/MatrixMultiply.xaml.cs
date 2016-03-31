@@ -10,6 +10,8 @@ namespace TccApp
 
 		private const string TAG = "MatrixMultiply";
 
+		private const int NUMBER_OF_TESTS = 50;
+
 		private int[,] randomMatrixA, randomMatrixB;
 
 		public MatrixMultiply ()
@@ -18,6 +20,19 @@ namespace TccApp
 		}
 
 		private void InitialLoad() {
+
+			btnCalculate.Clicked += BtnCalculate_Clicked;
+
+		}
+
+		void BtnCalculate_Clicked (object sender, EventArgs e) {
+			double averageTime, shortestTime, largestTime, totalTime;
+
+			for (int q = 0; q < NUMBER_OF_TESTS; q++) {
+			}
+
+			showResults (averageTime, shortestTime, largestTime, totalTime);
+			
 		}
 
 		private void FillRandomMatrix(int size) {
@@ -32,6 +47,11 @@ namespace TccApp
 					randomMatrixB [i, j] = (int)(randomNumber * 100);
 				}
 			}
+		}
+
+		private void showResults(double averageTimeInSeconds, double shortestTimeInSeconds, double largestTimeInSeconds,
+			double totalTimeInSeconds) {
+			
 		}
 
 	}

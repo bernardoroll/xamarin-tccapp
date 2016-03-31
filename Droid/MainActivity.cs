@@ -21,6 +21,11 @@ namespace TccApp.Droid
 
 			LoadApplication (new App ());
 		}
+
+		protected override void OnResume ()
+		{
+			//base.OnResume ();
+		}
 	}
 }
 
