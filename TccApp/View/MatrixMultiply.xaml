@@ -11,7 +11,7 @@
 		<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
 
 			<Label Text="Digite o tamanho da matriz quadrada:" />
-			<Entry x:Name="entMatrixSize" />
+			<Entry x:Name="entMatrixSize" Keyboard="Numeric" />
 			<Button x:Name="btnCalculate" Text="Calcular" />
 
 			<Label x:Name="lblAverageTime" />

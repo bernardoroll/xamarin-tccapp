@@ -28,18 +28,21 @@ namespace TccApp
 
 		protected override void OnStart ()
 		{
+			base.OnStart ();
 			// Handle when your app starts
 			System.Diagnostics.Debug.WriteLine(TAG + "OnStart() called.");
 		}
 
 		protected override void OnSleep ()
 		{
+			base.OnSleep ();
 			// Handle when your app sleeps
 			System.Diagnostics.Debug.WriteLine(TAG + "OnSleep() called.");
 		}
 
 		protected override void OnResume ()
 		{
+			base.OnResume ();
 			// Handle when your app resumes
 			System.Diagnostics.Debug.WriteLine(TAG + "OnResume() called.");
 		}

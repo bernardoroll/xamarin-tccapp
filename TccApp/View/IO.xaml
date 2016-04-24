@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TccApp.IO">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		x:Class="TccApp.IO" xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
 <ContentPage.Padding>
 	    <OnPlatform x:TypeArguments="Thickness"
 	                iOS="6, 20, 6, 6"
@@ -7,16 +8,29 @@
 	                WinPhone="6, 6, 6, 6" />
   	</ContentPage.Padding>
   	<ContentPage.Content>
+  		<ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
+			<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
 
-		<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
-
-			<Label Text="Escolha o tipo de operação:" />
+				<Label Text="Escolha o tipo de operação:" />
 
 
+					<controls:BindableRadioGroup x:Name="pckFileOperation" SelectedIndex="{Binding ItemSelected}"
+							TextColor="White" FontName="AmericanTypewriter" VerticalOptions="Start" />
+                
+				<Label Text="Escolha o tamanho do arquivo:" />
 
-			<Label Text="Escolha o tamanho do arquivo:" />
 
-		</StackLayout>
+					<controls:BindableRadioGroup x:Name="pckFileSize" SelectedIndex="{Binding ItemSelected}"
+							TextColor="White" FontName="AmericanTypewriter" VerticalOptions="Start" />
 
+				<Button x:Name="btnCalculate" Text="Calcular" />
+
+				<Label x:Name="lblAverageTime" />
+				<Label x:Name="lblShortestTime" />
+				<Label x:Name="lblLargestTime" />
+				<Label x:Name="lblTotalTime" />
+                
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>

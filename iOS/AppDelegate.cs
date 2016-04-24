@@ -5,10 +5,12 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using XLabs.Forms;
+
 namespace TccApp.iOS
 {
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+	public partial class AppDelegate : XFormsApplicationDelegate //global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
 	{
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
