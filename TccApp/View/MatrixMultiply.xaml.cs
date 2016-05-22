@@ -43,7 +43,13 @@ namespace TccApp
 			double largestTime = Double.MinValue;
 			double totalTime = 0;
 
+			long startTimestamp, endTimestamp;
+			long[] eachExecutionTime = new long[NUMBER_OF_TESTS];
+
 			int[,] resultMatrix = new int[randomMatrixA.GetLength (0), randomMatrixB.GetLength (1)];
+
+			startTimestamp = (long)DateTime.UtcNow.ToUniversalTime ().Subtract (new DateTime (1970, 1, 1, 0, 0, 0,
+				DateTimeKind.Utc)).TotalMilliseconds;
 
 			for (int q = 0; q < NUMBER_OF_TESTS; q++) {
 
@@ -60,7 +66,7 @@ namespace TccApp
 
 				DateTime endTime = DateTime.Now;
 				TimeSpan diffTime = endTime - startTime;
-
+				eachExecutionTime [q] = (long)diffTime.TotalMilliseconds;
 				if (diffTime.TotalMilliseconds < shortestTime) {
 					shortestTime = diffTime.TotalMilliseconds;
 				}
@@ -73,6 +79,9 @@ namespace TccApp
 
 			}
 
+			endTimestamp = (long)DateTime.UtcNow.ToUniversalTime ().Subtract (new DateTime (1970, 1, 1, 0, 0, 0,
+				DateTimeKind.Utc)).TotalMilliseconds;
+
 			averageTime = totalTime / NUMBER_OF_TESTS;
 
 			double averageTimeInSeconds = averageTime / 1000;
@@ -80,7 +89,8 @@ namespace TccApp
 			double largestTimeInSeconds = largestTime / 1000;
 			double totalTimeInSeconds = totalTime / 1000;
 
-			ShowResults (averageTimeInSeconds, shortestTimeInSeconds, largestTimeInSeconds, totalTimeInSeconds);
+			ShowResults (averageTimeInSeconds, shortestTimeInSeconds, largestTimeInSeconds, totalTimeInSeconds, 
+				startTimestamp, endTimestamp, eachExecutionTime);
 
 		}
 
@@ -99,13 +109,20 @@ namespace TccApp
 		}
 
 		private void ShowResults(double averageTimeInSeconds, double shortestTimeInSeconds, double largestTimeInSeconds,
-			double totalTimeInSeconds) {
+			double totalTimeInSeconds, long startTimestamp, long endTimestamp, long[] eachExecutionTime) {
+
+			lblStartTimestamp.Text = "Timestamp inicial: " + startTimestamp;
 
 			lblAverageTime.Text = "Tempo médio: " + averageTimeInSeconds.ToString () + " segundos.";
 			lblShortestTime.Text = "Menor tempo: " + shortestTimeInSeconds.ToString () + " segundos.";
 			lblLargestTime.Text = "Maior tempo: " + largestTimeInSeconds.ToString () + " segundos.";
 			lblTotalTime.Text = "Tempo total: " + totalTimeInSeconds.ToString () + " segundos.";
-			
+
+			lblEndTimestamp.Text = "Timestamp final: " + endTimestamp;
+			lblVariance.Text = "Variância: " + Statistics.GetVariance (eachExecutionTime);
+			lblStandardDeviation.Text = "Desvio padrão: " + Statistics.GetStandardDeviation (eachExecutionTime);
+
+
 		}
 
 	}

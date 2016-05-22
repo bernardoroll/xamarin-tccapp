@@ -25,10 +25,17 @@
 
 				<Button x:Name="btnCalculate" Text="Calcular" />
 
+				<Label x:Name="lblStartTimestamp" />
+
 				<Label x:Name="lblAverageTime" />
 				<Label x:Name="lblShortestTime" />
 				<Label x:Name="lblLargestTime" />
 				<Label x:Name="lblTotalTime" />
+
+				<Label x:Name="lblEndTimestamp" />
+				<Label x:Name="lblVariance" />
+				<Label x:Name="lblStandardDeviation" />
+
                 
 			</StackLayout>
 		</ScrollView>
