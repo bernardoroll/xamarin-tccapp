@@ -100,9 +100,9 @@ namespace TccApp
 			double randomNumber;
 			for (int i = 0; i < size; i++) {
 				for (int j = 0; j < size; j++) {
-					randomNumber = new Random ().NextDouble ();
+					randomNumber = new Random (DateTime.Now.Millisecond - i - j).NextDouble ();
 					randomMatrixA [i, j] = (int)(randomNumber * 100);
-					randomNumber = new Random ().NextDouble ();
+					randomNumber = new Random (DateTime.Now.Millisecond + i + j).NextDouble ();
 					randomMatrixB [i, j] = (int)(randomNumber * 100);
 				}
 			}
