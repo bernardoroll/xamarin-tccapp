@@ -78,7 +78,7 @@ namespace TccApp
 						//imgTestedImage2.Source = null;
 						////GC.Collect ();
 						stkImage.Children.Remove(mImageTested);
-						mImageTested = null;
+						//mImageTested = null;
 
 						GC.Collect ();
 
@@ -108,7 +108,9 @@ namespace TccApp
 			//System.Uri uri;
 			//System.Uri.TryCreate(imageURI, UriKind.Absolute, out uri);
 			//var imgTestedImage = new Image { Aspect = Aspect.AspectFit };
-			mImageTested = new Image { Aspect = Aspect.AspectFit };
+			if (mImageTested == null) {
+				mImageTested = new Image { Aspect = Aspect.AspectFit };
+			}
 
 			Task<ImageSource> result = Task<ImageSource>.Factory.StartNew(() => ImageSource.FromFile(imageURI));
 			//imgTestedImage2.Source = await result;
