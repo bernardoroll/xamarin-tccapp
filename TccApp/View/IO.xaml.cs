@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
 using System.Threading.Tasks;
+using System.Text;
 
 namespace TccApp
 {
@@ -63,7 +64,7 @@ namespace TccApp
 			InitialLoad ();
 		}
 
-		private void InitialLoad() {
+		private async Task InitialLoad() {
 			pckFileOperation.ItemsSource = new [] { 
 				"Leitura",
 				"Escrita"
@@ -85,7 +86,7 @@ namespace TccApp
 				"64 MB",
 			};
 
-			CreateTestFiles ();
+			 CreateTestFiles ();
 
 			pckFileOperation.CheckedChanged += PckFileOperation_CheckedChanged;
 			pckFileSize.CheckedChanged += PckFileSize_CheckedChanged;
@@ -105,6 +106,10 @@ namespace TccApp
 
 		private async Task CreateTestFiles() {
 			System.Diagnostics.Debug.WriteLine(TAG, "createTestFiles() called.");
+
+			if (saveAndLoadFile == null) {
+				saveAndLoadFile = DependencyService.Get<ISaveAndLoadFile> ();
+			}
 
 			if (!saveAndLoadFile.FileExists (GetFileNameBySize (FileSize.ONE_BYTE)) ||
 				saveAndLoadFile.Length(GetFileNameBySize(FileSize.ONE_BYTE)) != 1) {
@@ -417,7 +422,7 @@ namespace TccApp
 		private byte[] FillArrayOfBytes(int size) {
 			byte[] byteArray = new byte[size];
 			for(int i = 0; i < size; i++) {
-				byteArray [i] = Byte.Parse ("A");;
+				byteArray [i] = (byte)'A';//Byte.Parse ("A");
 			}
 			return byteArray;
 		}

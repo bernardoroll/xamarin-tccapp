@@ -7,5 +7,49 @@
 	                WinPhone="6, 6, 6, 6" />
   	</ContentPage.Padding>
 	<ContentPage.Content>
+		<ScrollView Orientation="Vertical" VerticalOptions="StartAndExpand">
+
+			<StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand">
+				
+					<Picker x:Name="pckImage" HorizontalOptions="FillAndExpand" 
+						SelectedIndex="0" Title="Selecione um uma imagem">
+				        <Picker.Items>						        	
+				        	<x:String x:Value="ford_" x:Name="ImageFord">Carro</x:String>
+				        	<x:String x:Value="guitar_" x:Name="ImageGuitar">Guitarra</x:String>
+				        	<x:String x:Value="skyline_" x:Name="ImageSkyline">Horizonte</x:String>
+				        </Picker.Items>
+				    </Picker>
+				
+					<Picker x:Name="pckSize" HorizontalOptions="FillAndExpand" SelectedIndex="0" Title="Selecione um tamanho">
+						<Picker.Items>
+							<x:String x:Value="640" x:Name="Small">Pequena</x:String>
+				        	<x:String x:Value="1280" x:Name="Medium">Média</x:String>
+				        	<x:String x:Value="1920" x:Name="Large">Grande</x:String>
+						</Picker.Items>
+					</Picker>
+				
+
+
+				<Button x:Name="btnCalculate" Text="Calcular" />
+
+
+				<Image x:Name="imgTestedImage2" Aspect="AspectFit" />
+				<StackLayout x:Name="stkImage" Orientation="Vertical">
+				</StackLayout>
+
+
+				<Label x:Name="lblStartTimestamp" />
+
+				<Label x:Name="lblAverageTime" />
+				<Label x:Name="lblShortestTime" />
+				<Label x:Name="lblLargestTime" />
+				<Label x:Name="lblTotalTime" />
+
+				<Label x:Name="lblEndTimestamp" />
+				<Label x:Name="lblVariance" />
+				<Label x:Name="lblStandardDeviation" />
+
+			</StackLayout>
+		</ScrollView>
 	</ContentPage.Content>
 </ContentPage>
